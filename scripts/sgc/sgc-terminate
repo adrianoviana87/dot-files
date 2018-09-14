@@ -1,0 +1,5 @@
+#!/bin/bash
+tmux send-keys -t sgc:3.0 "C-c" C-m
+tmux send-keys -t sgc:3.1 "C-c" C-m
+tmux send-keys -t sgc:3.3 "C-c" C-m
+

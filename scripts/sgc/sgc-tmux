@@ -1,0 +1,43 @@
+#!/bin/bash
+
+tmux new -s 'sgc' -d
+
+tmux rename-window ' main'
+tmux send-keys "cd ~" C-m
+
+tmux new-window -n ' back'
+tmux send-keys "cd ~/sgc/src" C-m
+tmux send-keys "nvim" C-m
+
+tmux new-window -n ' front'
+tmux send-keys "cd ~/sgc/src/sgc/portal" C-m
+tmux send-keys "nvim" C-m
+
+tmux new-window -n ' app-run'
+# sec
+tmux send-keys "cd ~/sgc/tools" C-m
+# cadu
+tmux split-window -h 
+tmux send-keys "cd ~/sgc/tools" C-m
+
+# cond
+tmux select-pane -L 
+tmux split-window -v 
+tmux send-keys "cd ~/sgc/tools" C-m
+
+# git
+tmux select-pane -R 
+tmux split-window -v 
+tmux send-keys "cd ~/sgc/src" C-m
+
+# serve
+tmux split-window -v 
+tmux send-keys "sgc-serve" C-m
+
+# omnisharp
+tmux select-pane -R 
+tmux split-window -v 
+tmux send-keys "sgc-omnisharp" C-m
+
+tmux attach -t sgc
+tmux rename-session 'sgc'

@@ -1,0 +1,3 @@
+# do not store the actual plugins
+vundle/
+plugged/
