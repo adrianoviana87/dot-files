@@ -1,10 +1,3 @@
-if has('nvim')
-  color OceanicNext
-  let g:airline_theme='oceanicnext'
-else
-  color codedark
-  let g:airline_theme='codedark'
-endif
 set guioptions-=TrLm
 set guitablabel=\[%N\]\ %t\ %M
 

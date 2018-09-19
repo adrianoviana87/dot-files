@@ -136,6 +136,7 @@ nnoremap 0 ^
 
 nnoremap <leader>´s :NERDTreeFind<cr>
 nnoremap <leader>'s :NERDTreeFind<cr>
+nnoremap <leader>nf :NERDTree<cr> :wincmd p<cr> :NERDTreeFind<cr>
 
 " Emmet: 'c-y c-,' in insert mode
 

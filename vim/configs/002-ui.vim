@@ -10,7 +10,7 @@ set background=dark
 
 " Height of the command bar
 set cmdheight=1
-set nocursorline
+set cursorline
 set termencoding=utf8
 set t_Co=256
 

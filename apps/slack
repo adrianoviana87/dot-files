@@ -1,0 +1,4 @@
+#!/bin/bash
+# This scripts just calls slackadaisical. I have made it so that I won't forget the app's name
+slackadaisical "$@"
+

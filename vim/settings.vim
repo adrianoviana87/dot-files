@@ -40,6 +40,7 @@ if has('nvim') " NEOVIM - Use VimPlug
   Plug 'mattn/emmet-vim'
   Plug 'skywind3000/asyncrun.vim'
   Plug 'majutsushi/tagbar'
+  Plug 'chriskempson/base16-vim'
   call plug#end()
   if (has("termguicolors"))
     set termguicolors
@@ -108,10 +109,7 @@ execute "source " . configBasePath . "010-dev-icons.vim"
 execute "source " . configBasePath . "011-database.vim"
 execute "source " . configBasePath . "012-projectionist.vim"
 execute "source " . configBasePath . "996-linter.vim"
-" Only executes this file when in VIM. NeoVim will execute it when the gui initilizes
-if !has("nvim")
-  execute "source " . configBasePath . "997-gui.vim"
-endif
 execute "source " . configBasePath . "998-auto-commands.vim"
 execute "source " . configBasePath . "999-mappings.vim"
+execute "source " . configBasePath . "999-colors.vim"
 

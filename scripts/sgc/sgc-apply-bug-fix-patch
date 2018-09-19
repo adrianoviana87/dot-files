@@ -1,0 +1,6 @@
+#!/bin/bash
+cd ~/sgc/src
+sgc-apply-linux-patch
+sgc-apply-no-jobs-patch
+sgc-apply-front-hmg-patch
+

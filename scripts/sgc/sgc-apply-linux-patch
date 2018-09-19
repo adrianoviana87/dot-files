@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/sgc/src
+git apply ~/aux-pred/linux-database-settings.patch
+

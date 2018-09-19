@@ -1,0 +1,6 @@
+LOG: 2018-09-14T16:32:53-03:00: Slacker Init
+-
+LOG: API: couldn't add message to channel history, channel does not exist undefined
+-
+LOG: { type: 'hello' }
+-
