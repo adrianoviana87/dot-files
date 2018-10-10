@@ -1,4 +1,24 @@
 #!/bin/bash
+USE_OMNISHARP=1
+
+usage()
+{
+  echo "usage: sgc-tmux [[-o | --no-omnisharp] | [-h | --help]]"
+}
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -o | --no-omnisharp )   shift
+                                USE_OMNISHARP=0
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
 
 tmux new -s 'sgc' -d
 
@@ -37,7 +57,10 @@ tmux send-keys "sgc-serve" C-m
 # omnisharp
 tmux select-pane -R 
 tmux split-window -v 
-tmux send-keys "sgc-omnisharp" C-m
+if [ "$USE_OMNISHARP" -gt "0" ]; then
+  tmux send-keys "sgc-omnisharp" C-m
+fi
 
-tmux attach -t sgc
+tmux -2 attach -t sgc
 tmux rename-session 'sgc'
+
