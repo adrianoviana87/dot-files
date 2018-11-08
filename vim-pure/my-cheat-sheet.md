@@ -12,6 +12,15 @@
 
 ## Search
 
- Search current word
+* Search current whole word: `*`
+* Search current word: `g*`
+* Search current whole word backwards: `#`
+
+## Registers
+
+* To access the register type: `Ctrl-r`
+* Current word register: `Ctrl-w`
+
+
 
 
