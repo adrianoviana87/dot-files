@@ -21,7 +21,7 @@ if has('nvim') " NEOVIM - Use VimPlug
   Plug 'herringtondarkholme/yats.vim'
   Plug 'othree/html5.vim'
   Plug 'fszymanski/deoplete-emoji'
-  Plug 'OmniSharp/omnisharp-vim', { 'do': 'cd server && powershell -executionpolicy bypass -File build.ps1' }
+  Plug 'OmniSharp/omnisharp-vim'
   " Installs vim-dispatch (required to launch OmniSharp server)
   Plug 'tpope/vim-dispatch'
   " Installs this source
