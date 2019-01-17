@@ -138,8 +138,6 @@ nnoremap <leader>´s :NERDTreeFind<cr>
 nnoremap <leader>'s :NERDTreeFind<cr>
 nnoremap <leader>nf :NERDTree<cr> :wincmd p<cr> :NERDTreeFind<cr>
 
-" Emmet: 'c-y c-,' in insert mode
-
 " Build Solution
 nnoremap <leader>bs :AsyncRun dotnet build /m /v:q<cr>
 

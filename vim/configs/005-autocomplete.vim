@@ -6,6 +6,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("nvim")
   let g:deoplete#enable_at_startup=1
+  let g:deoplete#sources#clang#libclang_path='/usr/lib/llvm-7/lib/libclang.so'
+  let g:deoplete#sources#clang#clang_header='/usr/include/clang/7/include/'
 endif
 
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'

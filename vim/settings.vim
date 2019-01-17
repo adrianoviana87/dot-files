@@ -11,6 +11,9 @@ if has('nvim') " NEOVIM - Use VimPlug
   call plug#begin('~/dot-files/vim/plugged')
   " list of plugins
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-clang'
+  Plug 'jansenm/vim-cmake'
+  Plug 'richq/vim-cmake-completion'
   Plug 'mhartington/oceanic-next' "Color Scheme
   Plug 'vim-airline/vim-airline'
   Plug 'ryanoasis/vim-devicons'
@@ -25,7 +28,6 @@ if has('nvim') " NEOVIM - Use VimPlug
   " Installs vim-dispatch (required to launch OmniSharp server)
   Plug 'tpope/vim-dispatch'
   " Installs this source
-  Plug 'yggdroot/indentline'
   Plug 'tpope/vim-projectionist'
   Plug 'sirver/ultisnips'
   Plug 'shougo/vimproc.vim'
@@ -41,6 +43,8 @@ if has('nvim') " NEOVIM - Use VimPlug
   Plug 'skywind3000/asyncrun.vim'
   Plug 'majutsushi/tagbar'
   Plug 'chriskempson/base16-vim'
+  Plug 'mxw/vim-jsx'
+  Plug 'pangloss/vim-javascript'
   call plug#end()
   if (has("termguicolors"))
     set termguicolors
@@ -76,7 +80,6 @@ else " VIM - Use Vundle
   Plugin 'mattn/emmet-vim'
   Plugin 'tpope/vim-fugitive'
   Plugin 'michalliu/jsruntime.vim'
-  Plugin 'michalliu/jsoncodecs.vim'
   Plugin 'michalliu/sourcebeautify.vim'
   Plugin 'reewr/vim-monokai-phoenix'
   Plugin 'oranget/vim-csharp'
@@ -86,7 +89,6 @@ else " VIM - Use Vundle
   Plugin 'dbext.vim'
   Plugin 'chriskempson/base16-vim'
   Plugin 'tomasiser/vim-code-dark'
-  Plugin 'yggdroot/indentline'
   Plugin 'tpope/vim-projectionist'
   Plugin 'matze/vim-move'
   Plugin 'skywind3000/asyncrun.vim'
@@ -108,6 +110,7 @@ execute "source " . configBasePath . "009-csharp.vim"
 execute "source " . configBasePath . "010-dev-icons.vim"
 execute "source " . configBasePath . "011-database.vim"
 execute "source " . configBasePath . "012-projectionist.vim"
+execute "source " . configBasePath . "013-emmet.vim"
 execute "source " . configBasePath . "996-linter.vim"
 execute "source " . configBasePath . "998-auto-commands.vim"
 execute "source " . configBasePath . "999-mappings.vim"

@@ -88,7 +88,7 @@ set noswapfile
 set expandtab
 
 " This increases performance
-set noshowcmd
+set showcmd
 set noruler
 
 " Be smart when using tabs ;)

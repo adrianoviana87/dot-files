@@ -1,4 +1,4 @@
-" Usability
+" ****** Usability ******
 set nocompatible
 set encoding=utf-8
 set history=1000
@@ -11,7 +11,7 @@ set hidden
 
 
 
-" UI
+" ****** UI ******
 set number
 set relativenumber
 set wildmenu
@@ -24,39 +24,22 @@ set ruler
 set noerrorbells
 set visualbell
 set mouse=a
+set shortmess+=I
 
 
 " Status line
 set laststatus=2
-" Tail of the filename
-set statusline=%t
-" File format
-set statusline+=%{&ff}
-" Help file flag
-set statusline+=%h
-" Modified flag
-set statusline+=%m
-" Read only flag
-set statusline+=%r
-" File type
-set statusline+=%y
-" Cursor column
-set statusline+=%c,
-" Cursor line/total lines
-set statusline+=%l/%L
-" Percent through file
-set statusline+=\ %P
 
 
 
 
-" Insert mode
+" ****** Insert mode ******
 inoremap <c-J> <esc>
 
 
 
 
-" Spell checking
+" ****** Spell checking ******
 set spell
 set spelllang=en
 " set spelllang=en,pt
@@ -64,16 +47,16 @@ set spelllang=en
 
 
 
-" File explorer
-nnoremap <c-n> :Lexplore<cr>
+" ****** File explorer ******
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 30
+let g:netrw_banner = 0
 
 
 
 
-" Backup
+" ****** Backup ******
 set directory=$HOME/.vim/swp//
 set backupdir==~/.vim/.backup//
 set nowb
@@ -83,7 +66,7 @@ set undofile
 
 
 
-" Indentation
+" ****** Indentation ******
 set autoindent
 filetype plugin indent on
 filetype indent on
@@ -95,7 +78,7 @@ set nowrap
 
 
 
-" Search
+" ****** Search ******
 set incsearch
 set hlsearch
 set ignorecase
@@ -104,7 +87,7 @@ set smartcase
 
 
 
-" Text rendering
+" ****** Text rendering ******
 set linebreak
 " The number of screen lines to keep above and below the cursor
 set scrolloff=3
@@ -115,8 +98,51 @@ syntax enable
 
 
 
-" Misc
+" ****** Misc ******
 
 " Display a confirmation dialog when closing an unsaved file
 set confirm
 
+
+" ****** Plugins ******
+call plug#begin('~/dot-files/vim-pure/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'dir': '~/git-repos/fzf', 'do': './install --all' }
+Plug 'vim-airline/vim-airline'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
+Plug 'w0rp/ale'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'jiangmiao/auto-pairs'
+
+call plug#end()
+
+
+
+
+" ****** NERDTree ******
+nnoremap <c-n> :NERDTreeToggle<cr>
+let NERDTreeMinimalUI=1
+
+
+
+
+" ****** FZF (fuzzy finder) ******
+nnoremap <c-p> :FZF<cr>
+
+
+
+
+" ****** Airline (Statusline) *****
+let g:airline_powerline_fonts = 1
+
+
+
+
+" ****** Deoplete (autocomplete) *****
+let g:deoplete#enable_at_startup = 1
