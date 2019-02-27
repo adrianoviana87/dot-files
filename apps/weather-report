@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while :
+do
+	clear
+  weather-canoas
+  echo
+  echo
+  echo
+  weather-palhoca
+	sleep 1800
+done
+

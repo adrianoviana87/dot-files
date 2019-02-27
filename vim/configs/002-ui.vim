@@ -10,7 +10,7 @@ set background=dark
 
 " Height of the command bar
 set cmdheight=1
-set cursorline
+set nocursorline
 set termencoding=utf8
 set t_Co=256
 
@@ -40,4 +40,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:asyncrun_encs = 'cp850'
 
 set guicursor=
-
+let g:base16_transparent_background = 1

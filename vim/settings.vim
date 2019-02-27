@@ -45,6 +45,8 @@ if has('nvim') " NEOVIM - Use VimPlug
   Plug 'chriskempson/base16-vim'
   Plug 'mxw/vim-jsx'
   Plug 'pangloss/vim-javascript'
+  Plug 'vim-scripts/grep.vim'
+  Plug 'tpope/vim-commentary'
   call plug#end()
   if (has("termguicolors"))
     set termguicolors

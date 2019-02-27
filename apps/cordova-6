@@ -1,0 +1,3 @@
+#!/bin/bash
+~/cwi/repos/clube-assinante/node_modules/cordova/bin/cordova "$@"
+

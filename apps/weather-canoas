@@ -1,0 +1,3 @@
+#/bin/bash
+ansiweather -l "Canoas, RS - Brasil" -u metric -a false -s true -w false -p false -d false -f 5
+

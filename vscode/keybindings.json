@@ -1,0 +1,57 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+oem_4 ctrl+s",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "extension.ionSwitchHTML",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "extension.ionSwitchTS",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "workbench.action.maximizeEditor",
+        "when": ""
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "workbench.action.toggleZenMode",
+        "when": ""
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    }
+]

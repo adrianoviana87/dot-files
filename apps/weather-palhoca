@@ -1,0 +1,4 @@
+#/bin/bash
+ansiweather -l "Palhoça, SC - Brasil" -u metric -a false -s true -w false -p false -d false -f 5
+
+
