@@ -1,0 +1,3 @@
+#!/bin/bash
+~/.local/apps/node-v10.15.2/bin/node "$@"
+

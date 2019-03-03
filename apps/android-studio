@@ -1,4 +1,3 @@
 #!/bin/bash
-~/Downloads/android-studio/bin/studio.sh
-
+~/.local/apps/android-studio/bin/studio.sh "$@"
 
