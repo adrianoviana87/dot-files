@@ -1,11 +1,11 @@
-set guioptions-=TrLm
+set guioptions-=eTrLm
 set guitablabel=\[%N\]\ %t\ %M
 
-set guifont=DejaVuSansMonoForPowerline\ NF:h10
+set guifont=Consolas\ NF:h10
 
 if has("nvim")
   "Sets the font for nvim-qt
-  Guifont! DejaVuSansMonoForPowerline NF:10
+  Guifont! Consolas NF:10
   " Sets the font for some gtk clients
   if exists('g:GtkGuiLoaded')
     call rpcnotify(1, 'Gui', 'Font', 'DejaVuSansMonoForPowerline NF 10')

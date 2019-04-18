@@ -22,10 +22,10 @@ augroup locallistchars_group
     autocmd!
     autocmd FileType cs,vim,typescript,sql,js,c,cpp,h,bat setlocal list listchars=tab:\ \ ,trail:∷,extends:❯,precedes:❮
 augroup END
-set guioptions-=TrLm
+set guioptions-=eTrLm
 set guitablabel=\[%N\]\ %t\ %M
 
-set guifont=DejaVuSansMonoForPowerline\ NF:h10
+set guifont=Consolas\ NF:h10
 
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar

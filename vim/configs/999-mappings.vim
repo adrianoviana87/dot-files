@@ -157,3 +157,7 @@ nnoremap <leader>tb :TagbarToggle<cr>
 
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gb :Gblame<cr>
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+

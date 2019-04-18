@@ -28,6 +28,7 @@ if has('nvim') " NEOVIM - Use VimPlug
   " Installs vim-dispatch (required to launch OmniSharp server)
   Plug 'tpope/vim-dispatch'
   " Installs this source
+  " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
   Plug 'tpope/vim-projectionist'
   Plug 'sirver/ultisnips'
   Plug 'shougo/vimproc.vim'
@@ -47,12 +48,16 @@ if has('nvim') " NEOVIM - Use VimPlug
   Plug 'pangloss/vim-javascript'
   Plug 'vim-scripts/grep.vim'
   Plug 'tpope/vim-commentary'
+  Plug 'posva/vim-vue'
+  Plug 'https://gitlab.com/Lenovsky/nuake.git'
   call plug#end()
   if (has("termguicolors"))
     set termguicolors
   endif
 
 else " VIM - Use Vundle
+  set pythonthreehome=C:\Python37
+  set pythonthreedll=C:\Python37\Python37.dll
   filetype off                  " required
 
   " set the runtime path to include Vundle and initialize
@@ -95,6 +100,7 @@ else " VIM - Use Vundle
   Plugin 'matze/vim-move'
   Plugin 'skywind3000/asyncrun.vim'
   Plugin 'ajh17/vimcompletesme'
+  Plugin 'darthmall/vim-vue'
   call vundle#end()            " required
 endif
 

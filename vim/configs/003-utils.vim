@@ -66,3 +66,5 @@ function! Adr_TrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
+autocmd FileType vue syntax sync fromstart
+
