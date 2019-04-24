@@ -6,6 +6,7 @@ set nocompatible
 
 " ****** multi-byte characters ******
 set encoding=utf-8
+set emoji
 
 
 
@@ -22,16 +23,15 @@ set wildignore+=node_modues/**
 " ****** editing text ******
 set backspace=indent,eol,start
 set undodir=~/vimundo
-set undofile
 
 
 
 
 " ****** messages and info ******
-set showcmd
+set noshowcmd
 set shortmess+=I
-set showmode
-set ruler " Always show cursor position
+set noshowmode
+set noruler
 set noerrorbells
 set visualbell
 set confirm " Display a confirmation dialog when closing an unsaved file
@@ -49,8 +49,9 @@ set backupdir==~/vimbackup//
 
 " ****** multiple windows ******
 set hidden
-set equalalways	" make all windows the same size when adding/removing windows
+set noequalalways	" make all windows the same size when adding/removing windows
 set laststatus=2
+
 
 
 
@@ -61,6 +62,9 @@ set nowrap
 set linebreak
 set scrolloff=3 " The number of screen lines to keep above and below the cursor
 set sidescrolloff=5 " The number of screen columns to keep to the left and right of the cursor
+" if has("win32") || has("win64")
+"   set renderoptions=type:directx,gamma:1.5,contrast:0.5,geom:1,renmode:5,taamode:1,level:0.5
+" endif
 
 
 
@@ -73,7 +77,6 @@ set background=dark
 set cursorline
 filetype plugin indent on
 filetype indent on
-color desert
 set hlsearch
 
 
@@ -92,7 +95,20 @@ set mouse=a
 
 
 " ****** gui ******
-set guifont=Consolas\ NF:h12
+set guifont=SauceCodePro\ NF:h12
+set guioptions+=! " execute commands inside vim terminal emulator
+set guioptions-=a " set selection to system clipboard but not in * register
+set guioptions+=P " set selection to system clipboard in + register instead
+set guioptions+=c " use console dialog for simple choices
+set guioptions+=e " show tab pages in gui
+set guioptions-=t " no option to dettach system menu
+set guioptions-=T " no toolbar
+set guioptions-=r " right hand scrollbar not always present
+set guioptions-=R " right hand scrollbar not present when there is a vsplit
+set guioptions-=l " left hand scrollbar not always present
+set guioptions-=L " left hand scrollbar not present when there is a vsplit
+set guioptions-=b " no bottom scrollbar
+set guioptions-=m " no menubar
 
 
 
@@ -103,7 +119,10 @@ inoremap <c-J> <esc>
 
 
 
-" ****** Normal mode *********
+" ****** Command mode ******
+cnoremap <c-j> <up>
+cnoremap <c-k> <down>
+" ****** Normal mode ******
 nnoremap ; :
 
 " go to previous next error
@@ -132,7 +151,6 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 30
 let g:netrw_banner = 0
-nnoremap <c-n> :Lexplore<cr>
 
 
 
@@ -146,9 +164,11 @@ set directory=$HOME/vimswp//
 
 " ****** tabs and indenting ******
 set autoindent
+set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
 
 
 
@@ -170,6 +190,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -182,134 +207,52 @@ let g:ale_linters = {
 \ 'javascript': ['eslint']
 \}
 
-
-
-
-" ****** status line ******
-set laststatus=2
-set statusline=
-set statusline+=%9*
-set statusline+=%6*
-set statusline+=\ 
-set statusline+=%{StatuslineMode()}
-set statusline+=\ 
-set statusline+=%5*
-set statusline+=
-set statusline+=%6*
-set statusline+=
-set statusline+=\ 
-set statusline+=%t
-set statusline+=\ 
-set statusline+=%5*
-set statusline+=
-set statusline+=%6*
-set statusline+=
-set statusline+=\ 
-set statusline+=%{MyStatusReadOnly()}
-set statusline+=\ 
-set statusline+=%5*
-set statusline+=
-set statusline+=%6*
-set statusline+=
-set statusline+=\ 
-set statusline+=%{MyStatusModified()}
-set statusline+=\ 
-set statusline+=%5*
-set statusline+=
-set statusline+=%6*
-set statusline+=
-set statusline+=%y
-set statusline+=%5*
-set statusline+=
-set statusline+=%=
-set statusline+=
-set statusline+=%5*
-set statusline+=%6*
-set statusline+=\ 
-set statusline+=
-set statusline+=%l
-set statusline+=/
-set statusline+=%L
-set statusline+=\ 
-set statusline+=
-set statusline+=%5*
-set statusline+=
-set statusline+=%6*
-set statusline+=\ 
-set statusline+=%P
-set statusline+=\ 
-set statusline+=
-set statusline+=%5*
-set statusline+=
-set statusline+=%6*
-set statusline+=\ 
-set statusline+=%{MyStatusLinter()}
-set statusline+=\ 
-hi User9 ctermbg=black ctermfg=white guibg=black guifg=white
-hi User6 ctermbg=white ctermfg=black guibg=white guifg=black
-hi User5 ctermbg=black ctermfg=white guibg=black guifg=white
-
-function! MyStatusLinter() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? '' : printf(
-    \   ' %d  %d',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
-
-function! MyStatusReadOnly() abort
-  if &readonly || !&modifiable
-    return ''
-  else
-    return ''
-endfunction
-
-function! MyStatusModified() abort
-  if &modified
-    return ''
-  else
-    return ''
-endfunction
-
-function! StatuslineMode()
-  let l:mode=mode()
-  if l:mode==#"n"
-    " normal
-    return ""
-  elseif l:mode==?"v"
-    " visual
-    return ""
-  elseif l:mode==#"i"
-    " insert
-    return ""
-  elseif l:mode==#"R"
-    " replace
-    return ""
-  elseif l:mode==?"s"
-    " select
-    return ""
-  elseif l:mode==#"t"
-    " terminal
-    return ""
-  elseif l:mode==#"c"
-    " command
-    return ""
-  elseif l:mode==#"!"
-    " shell
-    return ""
-  endif
-endfunction
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_powerline_fonts = 1
 
 
 
 
-" ******* vuejs ******
+" ****** airline ******
+let g:airline#extensions#tabline#enabled = 1
+
+
+
+
+" ****** gruvbox ******
+color gruvbox
+
+
+
+
+" ****** vuejs ******
 augroup VueJsFiletypeGroup
     autocmd!
-    au BufNewFile,BufRead *.vue set filetype=vue
+    au BufNewFile,BufRead *.vue call MySetVueOptions()
 augroup END
+function MySetVueOptions()
+  set filetype=vue
+  set syntax=html
+ endfunction
+
+
+
+
+ " ****** neerdtreee ******
+nnoremap <c-n> :NERDTreeToggle<cr>
+let NERDTreeMinimalUI=1
+let NERDTreeMinimalMenu=0
+
+
+
+
+" ****** ctrlp ******
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
+nnoremap <c-l> :CtrlPBuffer<cr>
+nnoremap <c-m> :CtrlPMRUFiles<cr>
