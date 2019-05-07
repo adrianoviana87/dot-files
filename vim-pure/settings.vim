@@ -78,6 +78,7 @@ set cursorline
 filetype plugin indent on
 filetype indent on
 set hlsearch
+set termguicolors
 
 
 
@@ -175,7 +176,7 @@ set expandtab
 
 " ****** moving around, searching and patterns ******
 set incsearch " show match for partly typed search command
-set magic	" change the way backslashes are used in search patterns  
+set magic	" change the way backslashes are used in search patterns
 set ignorecase
 set smartcase
 set path+=**
@@ -195,6 +196,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -217,12 +220,12 @@ let g:airline_powerline_fonts = 1
 
 " ****** airline ******
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='luna'
 
 
 
-
-" ****** gruvbox ******
-color gruvbox
+" ****** colorscheme ******
+colorscheme codedark
 
 
 
