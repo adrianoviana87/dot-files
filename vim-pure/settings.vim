@@ -74,7 +74,7 @@ syntax enable
 set nospell
 set spelllang=en
 set background=dark
-set cursorline
+set nocursorline
 filetype plugin indent on
 filetype indent on
 set hlsearch
@@ -198,6 +198,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'xolox/vim-misc'
 
 call plug#end()
 
@@ -220,12 +222,12 @@ let g:airline_powerline_fonts = 1
 
 " ****** airline ******
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='luna'
+" let g:airline_theme='luna'
 
 
 
 " ****** colorscheme ******
-colorscheme codedark
+colorscheme default
 
 
 
