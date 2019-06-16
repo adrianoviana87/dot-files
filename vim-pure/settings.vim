@@ -195,7 +195,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'xolox/vim-colorscheme-switcher'
@@ -259,5 +258,5 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
-nnoremap <c-l> :CtrlPBuffer<cr>
-nnoremap <c-m> :CtrlPMRUFiles<cr>
+nnoremap <c-p> :CocList files<cr>
+nnoremap <c-m> :CocList mru<cr>
