@@ -121,6 +121,8 @@ inoremap <c-J> <esc>
 
 
 " ****** Command mode ******
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 cnoremap <c-j> <up>
 cnoremap <c-k> <down>
 " ****** Normal mode ******
@@ -221,12 +223,12 @@ let g:airline_powerline_fonts = 1
 
 " ****** airline ******
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='luna'
+let g:airline_theme='kolor'
 
 
 
 " ****** colorscheme ******
-colorscheme default
+colorscheme codedark
 
 
 
@@ -260,3 +262,4 @@ if executable('rg')
 endif
 nnoremap <c-p> :CocList files<cr>
 nnoremap <c-m> :CocList mru<cr>
+nnoremap <leader>f :CocList grep<cr>
