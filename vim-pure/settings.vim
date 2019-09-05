@@ -201,6 +201,9 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
