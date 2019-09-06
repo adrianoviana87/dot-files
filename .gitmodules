@@ -1,0 +1,3 @@
+[submodule "vim-pure"]
+	path = vim-pure
+	url = https://github.com/adrianoviana87/vim-pure.git
