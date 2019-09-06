@@ -231,7 +231,7 @@ let g:airline_theme='kolor'
 
 
 " ****** colorscheme ******
-colorscheme codedark
+silent! colorscheme codedark
 
 
 
