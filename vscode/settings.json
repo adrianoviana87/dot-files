@@ -1,5 +1,4 @@
 {
-    "workbench.iconTheme": "vscode-icons",
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "search.useGlobalIgnoreFiles": true,
@@ -12,6 +11,10 @@
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["k", "j"],
             "after": ["<Esc>"]
         }
     ]
